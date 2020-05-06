@@ -74,4 +74,19 @@ For IPython magic, you can use
 * **NOTE**: You must have run ``qcomb`` with proper input arguments prior to ``%timeit`` for fair timing, because numba's jit takes some time for compilation.
 * The results are from my Mac Book Pro 2018 15" (2.6 GHz Intel Core i7; 16 GB 2400 MHz DDR4; macOS 10.14.6).
 
+**I think what I wrote is not so efficient as it has no much gain compared to numpy:**
+
+```
+%timeit -n 5 -r 5 np.mean(np.array(images[np.ones(images.shape, dtype=bool)], dtype='float32', order='C'), axis=0)
+%timeit -n 5 -r 5 np.median(np.array(images[np.ones(images.shape, dtype=bool)], dtype='float32', order='C'), axis=0)
+%timeit -n 5 -r 5 np.std(images[np.ones(images.shape, dtype=bool)], axis=0, ddof=1)
+# 8.33 ms ± 415 µs per loop (mean ± std. dev. of 5 runs, 5 loops each)
+# 29.8 ms ± 352 µs per loop (mean ± std. dev. of 5 runs, 5 loops each)
+# 13.1 ms ± 428 µs per loop (mean ± std. dev. of 5 runs, 5 loops each)
+```
+
+
+
+
+
 IRAF used 3-sigma with unknown ``maxiters``, and hence it may have done a less aggressive rejection, i.e., quicker calculation. 
