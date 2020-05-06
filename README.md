@@ -19,8 +19,9 @@ I made this for astronomical image combination (to achieve combine speed compara
 
 ### Likely to be updated
 
-1. Currently only sigma-clip is supported for rejection method.
-2. Memory problem: ``nbcombine`` is blind to any memory limit. Be careful when you're dealing with too many images or large-sized images.
+1. **It is still slow compared to what I expected.** Maybe I am doing something wrong.
+2. Currently only sigma-clip is supported for rejection method.
+3. Memory problem: ``nbcombine`` is blind to any memory limit. Be careful when you're dealing with too many images or large-sized images.
 
 
 
