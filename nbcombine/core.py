@@ -1,6 +1,6 @@
 import numpy as np
 
-from util import COMB_FUNCS, _qcomb_setup, _qcomb_wrapup
+from .util import COMB_FUNCS, _qcomb_setup, _qcomb_wrapup
 
 __all__ = ['qcomb']
 
